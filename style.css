@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 :root {
   --main-font-color: rgb(243, 243, 247);
@@ -19,15 +19,20 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fredoka One', cursive;
   width: auto;
   height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: monospace;
 }
 
 .main-container {
@@ -52,6 +57,10 @@ a#github:active {
   font-weight: bold;
   color: var(--secondary-bg-color);
   text-decoration: none;
+}
+
+a#github:hover {
+  color: var(--inside-color);
 }
 
 .main-content {
@@ -136,7 +145,7 @@ a#github:active {
 
 .values-input {
   width: 350px;
-  background-color: grey;
+  background-color: rgb(212, 209, 209);
   border-radius: 5px;
   border: none;
   outline: 0;
@@ -145,7 +154,8 @@ a#github:active {
   border-bottom-right-radius: 0;
   font-size: 16px;
   padding: 20px;
-  color: white;
+  color: rgb(19, 18, 18);
+  font-weight: bold;
 }
 
 .copy-button {
@@ -439,12 +449,63 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 621px) {
+  .values-input {
+    width: 300px;
+    color: rgba(12, 12, 10, 0.5);
+    /* padding: 0;
+    font-size: 10px; */
+  }
+  label {
+    color: rgb(179, 28, 85);
+  }
+  body {
+    background-color: rgb(178, 180, 185);
+    overflow: hidden;
+  }
+  .first-line p {
+    opacity: 0;
+    display: none;
+  }
+  .first-line {
+    width: 100%;
+    justify-content: center;
+  }
   .border-radius-container {
-    width: 350px;
-    height: 350px;
+    border: 3px dotted rgb(19, 18, 18);
+    width: 400px;
+    height: 400px;
+  }
+  .left-container {
+    align-items: center;
+  }
+  .right-container {
+    align-items: center;
+  }
+  .second-line {
+    display: none;
+  }
+
+  .border-radius-data-container {
+    position: absolute;
+    top: 20%;
+  }
+}
+
+@media (max-width: 475px) {
+  .border-radius-container {
+    width: 320px;
+    height: 320px;
   }
   h1 {
     font-size: 25px;
+  }
+  .values-input {
+    font-size: 12px;
+    padding: 0;
+    width: 300px;
+  }
+  .copy-section {
+    max-width: 300px;
   }
 }
