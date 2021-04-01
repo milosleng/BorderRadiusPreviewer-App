@@ -11,7 +11,7 @@
   --inside-color: #c0e218;
 }
 
-/* * {
+/* 
   box-sizing: border-box;
 } */
 
@@ -237,7 +237,7 @@ input#width {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(116, 114, 114);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -249,13 +249,13 @@ input#width {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: var(--light-green);
+  background-color: var(--inside-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: var(--yellow-color);
+  background-color: var(--secondary-bg-color);
 }
 
 input:focus + .slider {
