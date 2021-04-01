@@ -9,8 +9,8 @@ const topLeft = document.getElementById('top-left');
 const topRight = document.getElementById('top-right');
 const bottomLeft = document.getElementById('bottom-left');
 const bottomRight = document.getElementById('bottom-right');
-const adjustWidth = document.getElementById('width');
-const adjustHeight = document.getElementById('height');
+const widthInput = document.getElementById('width');
+const heightInput = document.getElementById('height');
 const widthHeightContainer = document.querySelector('.width-height-container');
 // const checkBox = document.querySelector('.checkbox');
 // const toggleSwitch = document.querySelector('.switch');
@@ -25,31 +25,58 @@ copyButton.addEventListener('click', () => {
   document.execCommand('copy');
 });
 
-//calculating border radius functions
+//calculating border radius functions +
 topLeft.addEventListener('input', function () {
   insideBox.style.borderTopLeftRadius = Number(topLeft.value) + 'px';
-  inputValues.setAttribute('placeholder') = topLeft.value;
+});
+
+topLeft.addEventListener('focusout', function () {
+  inputValues.setAttribute(
+    'value',
+    'border-radius: ' + topLeft.value + 'px' + ' '
+  );
 });
 
 topRight.addEventListener('input', function () {
   insideBox.style.borderTopRightRadius = Number(topRight.value) + 'px';
 });
 
+topRight.addEventListener('focusout', function () {
+  inputValues.setAttribute(
+    'value',
+    inputValues.value + topRight.value + 'px' + ' '
+  );
+});
+
 bottomLeft.addEventListener('input', function () {
   insideBox.style.borderBottomLeftRadius = Number(bottomLeft.value) + 'px';
+});
+
+bottomLeft.addEventListener('focusout', function () {
+  inputValues.setAttribute(
+    'value',
+    inputValues.value + bottomLeft.value + 'px' + ' '
+  );
 });
 
 bottomRight.addEventListener('input', function () {
   insideBox.style.borderBottomRightRadius = Number(bottomRight.value) + 'px';
 });
 
-//adjusting the size of the box
-adjustWidth.addEventListener('input', () => {
-  bigBox.style.width = adjustWidth.value + 'px';
+bottomRight.addEventListener('focusout', function () {
+  inputValues.setAttribute(
+    'value',
+    inputValues.value + bottomRight.value + 'px' + ' '
+  );
 });
 
-adjustHeight.addEventListener('input', () => {
-  bigBox.style.height = adjustHeight.value + 'px';
+//adjusting the size of the box
+widthInput.addEventListener('input', () => {
+  bigBox.style.width = widthInput.value + 'px';
+});
+
+heightInput.addEventListener('input', () => {
+  bigBox.style.height = heightInput.value + 'px';
 });
 
 //toggle custom height/width
