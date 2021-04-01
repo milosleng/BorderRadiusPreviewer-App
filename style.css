@@ -1,16 +1,314 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap');
 
+:root {
+  --main-font-color: rgb(243, 243, 247);
+  --secondary-font-color: rgb(185, 226, 71);
+  --main-bg-color: #8f2d56;
+  --secondary-bg-color: #d81159;
+  --yellow-color: #ffbc42;
+  --light-green: #218380;
+  --light-blue: #73d2de;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  background-color: #8f2d56;
+  color: var(--main-font-color);
+  text-align: center;
   font-family: 'Roboto', sans-serif;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  width: auto;
   height: 100vh;
+  position: relative;
 }
+
+.main-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.white-line {
+  background-color: var(--main-font-color);
+  height: 2px;
+  width: 60%;
+}
+
+a#github,
+a#github:active {
+  display: block;
+  margin: 10px 0 40px 0;
+  cursor: pointer;
+  color: var(--yellow-color);
+  text-decoration: none;
+}
+
+.border-radius-container {
+  border: 1px dotted rgb(187, 182, 182);
+  min-height: 400px;
+  width: 50%;
+  border-radius: 0;
+}
+
+.border-radius-data-container {
+  margin: 60px 0 20px 0;
+  min-width: 70%;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.first-line {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 0 20px 0;
+  text-align: left;
+}
+
+.first-line input {
+  width: 70%;
+  background-color: grey;
+  border-radius: 5px;
+  border: none;
+  outline: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.copy-button {
+  padding: 0 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.copy-button:hover {
+  background-color: var(--yellow-color);
+  color: white;
+}
+
+.second-line {
+  display: flex;
+  margin: 0px 0 20px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.switch-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.width-height-container {
+  display: flex;
+}
+
+.width-height-container input {
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* TOGGLE BUTTON STYLES */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 101px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--light-green);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--yellow-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2bd4f1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* HERE END TOGGLE BUTTON STYLES */
+
+/* BUBBLES STYLES START HERE */
+
+/* .bubbles {
+  width: auto;
+  height: 100vh;
+  position: relative;
+  background-color: grey;
+} */
+
+.small-bubble {
+  position: absolute;
+  background-color: purple;
+  width: 300px;
+  height: 300px;
+  animation: move 45s infinite ease-out;
+  border-radius: 50%;
+  margin: 0;
+  bottom: 0;
+  left: 30%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.small-bubble:nth-child(1) {
+  width: 900px;
+  height: 900px;
+  background-color: blue;
+  left: 0%;
+  animation: moveBlue 45s infinite linear;
+}
+
+.small-bubble:nth-child(2) {
+  background-color: black;
+  height: 300px;
+  width: 300px;
+  left: 40%;
+  animation: moveBlack 30s infinite linear;
+}
+
+.small-bubble:nth-child(3) {
+  background-color: orange;
+  height: 600px;
+  width: 600px;
+  left: 50%;
+  animation: moveOrange 45s infinite linear;
+}
+
+@keyframes moveBlue {
+  0% {
+    bottom: 5%;
+    transform: translateX(50%);
+  }
+
+  20% {
+    bottom: 30%;
+    transform: translateX(30%);
+  }
+
+  50% {
+    bottom: 10%;
+    transform: translateX(-30%);
+  }
+
+  70% {
+    bottom: 20%;
+    transform: translateX(-20%);
+  }
+
+  100% {
+    bottom: 10%;
+    transform: translateX(10%);
+  }
+}
+
+@keyframes moveOrange {
+  0% {
+    bottom: 40%;
+    transform: translateX(10%);
+  }
+
+  20% {
+    bottom: 30%;
+    transform: translateX(30%);
+  }
+
+  50% {
+    bottom: 10%;
+    transform: translateX(55%);
+  }
+
+  70% {
+    bottom: 20%;
+    transform: translateX(-3%);
+  }
+
+  100% {
+    bottom: 60%;
+    transform: translateX(10%);
+  }
+}
+
+@keyframes moveBlack {
+  0% {
+    bottom: 0%;
+    transform: translateX(-20%);
+  }
+
+  20% {
+    bottom: 10%;
+    transform: translateX(50%);
+  }
+
+  50% {
+    bottom: 30%;
+    transform: translateX(70%);
+  }
+
+  70% {
+    bottom: 40%;
+    transform: translateX(100%);
+  }
+
+  100% {
+    bottom: -20%;
+    transform: translateX(70%);
+  }
+}
+
+/* BUBBLES STYLES END HERE */

@@ -11,10 +11,43 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>My project</title>
+    <title>BorderRadiusPreviewer-App</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="bubbles">
+      <div class="small-bubble"></div>
+       <div class="small-bubble"></div>
+       <div class="small-bubble"></div>
+    <div class="main-container">
+      <h1>BORDER RADIUS PREVIEWER</h1>
+      <div class="white-line"></div>
+      <a href="https://github.com/milosleng/BorderRadiusPreviewer-App" target="_blank" id="github"><i class="fab fa-github fa-fw"></i>View on GitHub</a>
+      <div class="border-radius-container"></div>
+      <div class="border-radius-data-container">
+        <div class="first-line">
+          <p>border-radius:</p>
+          <input type="text" class="values-input" value="some dummy value" />
+          <button class="copy-button">COPY</button>
+        </div>
+        <div class="second-line">
+          <div class="switch-container">
+            <p>Custom size:</p>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            
+          </div>
+
+          <div class="width-height-container">
+            <p>Width:</p>
+            <input type="number" />
+            <p>Height:</p>
+            <input type="number" />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
